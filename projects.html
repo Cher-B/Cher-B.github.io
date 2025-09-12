@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Cherry!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <span class="logo">CB</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="resume.html" class="nav-link">Resume</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Projects</h1>
+                <p class="page-subtitle">Coming soon - my portfolio of robotics and AI projects</p>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <div class="coming-soon">
+                    <div class="coming-soon-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <h2>Projects Coming Soon</h2>
+                    <p>I'm currently working on showcasing my robotics and AI projects. Check back soon for:</p>
+                    <ul class="project-list">
+                        <li>Robotics Engineering Projects</li>
+                        <li>Computer Vision Research</li>
+                        <li>AI/ML Applications</li>
+                        <li>Innovation & Problem-Solving</li>
+                    </ul>
+                    <div class="contact-cta">
+                        <p>In the meantime, feel free to <a href="index.html#contact">contact me</a> to learn more about my work!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Cherry All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/cherrybhatt/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#" class="social-link" aria-label="GitHub">GitHub</a>
+                    <div class="contact-container">
+                        <a href="#" class="social-link contact-link" aria-label="Contact" id="contact-link">Contact</a>
+                        <div class="contact-tooltip" id="contact-tooltip">
+                            <span class="contact-email">cbhatt@alumni.cmu.edu</span>
+                            <span class="contact-copy">Click to copy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize contact tooltip functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            new ContactTooltip();
+        });
+    </script>
+</body>
+</html>

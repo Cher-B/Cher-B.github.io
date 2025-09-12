@@ -110,12 +110,12 @@ class AnimationObserver {
 // Parallax Effect for Floating Elements
 class ParallaxEffect {
   constructor() {
-    this.floatingCards = document.querySelectorAll('.floating-card');
+    this.floatingCherries = document.querySelectorAll('.floating-cherry');
     this.init();
   }
   
   init() {
-    if (this.floatingCards.length > 0) {
+    if (this.floatingCherries.length > 0) {
       window.addEventListener('scroll', this.handleScroll.bind(this));
       this.handleScroll(); // Initial call
     }
@@ -125,9 +125,9 @@ class ParallaxEffect {
     const scrolled = window.pageYOffset;
     const rate = scrolled * -0.5;
     
-    this.floatingCards.forEach((card, index) => {
+    this.floatingCherries.forEach((cherry, index) => {
       const speed = 0.3 + (index * 0.1);
-      card.style.transform = `translateY(${rate * speed}px)`;
+      cherry.style.transform = `translateY(${rate * speed}px)`;
     });
   }
 }
@@ -197,7 +197,7 @@ class ContactTooltip {
   constructor() {
     this.contactLink = document.getElementById('contact-link');
     this.tooltip = document.getElementById('contact-tooltip');
-    this.email = 'cherry.bhatt@example.com'; // Replace with your actual email
+    this.email = 'cbhatt@alumni.cmu.edu';
     
     this.init();
   }
