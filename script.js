@@ -179,14 +179,8 @@ class ScrollPerformance {
   }
   
   updateScroll() {
-    // Header background opacity based on scroll
-    const header = document.querySelector('.header');
-    const scrolled = window.pageYOffset;
-    const opacity = Math.min(scrolled / 100, 1);
-    
-    if (header) {
-      header.style.backgroundColor = `rgba(255, 255, 255, ${0.8 * opacity})`;
-    }
+    // Header background opacity based on scroll - REMOVED
+    // Keeping consistent header appearance
     
     this.ticking = false;
   }
@@ -194,9 +188,9 @@ class ScrollPerformance {
 
 // Contact Tooltip Manager
 class ContactTooltip {
-  constructor() {
-    this.contactLink = document.getElementById('contact-link');
-    this.tooltip = document.getElementById('contact-tooltip');
+  constructor(linkId = 'contact-link', tooltipId = 'contact-tooltip') {
+    this.contactLink = document.getElementById(linkId);
+    this.tooltip = document.getElementById(tooltipId);
     this.email = 'cbhatt@alumni.cmu.edu';
     
     this.init();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Cherry!</title>
+    <title>Blog - Cherry!</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +19,9 @@
             </div>
             <div class="nav-links">
                 <a href="resume.html" class="nav-link">Resume</a>
-                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="projects.html" class="nav-link">Projects</a>
                 <a href="skills.html" class="nav-link">Skills</a>
-                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
             </div>
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                 <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -38,26 +38,18 @@
     <main class="main">
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">Projects</h1>
-                <p class="page-subtitle">Coming soon - my portfolio of robotics and AI projects</p>
+                <h1 class="page-title">Blog</h1>
+                <p class="page-subtitle">My thoughts, insights, and experiences in robotics and technology</p>
             </div>
         </section>
 
-        <section class="projects-section">
+        <section class="blog-section">
             <div class="container">
                 <div class="coming-soon">
-                    <div class="coming-soon-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12,6 12,12 16,14"/>
-                        </svg>
-                    </div>
-                    <h2>Projects Coming Soon</h2>
-                    <p>I'm currently working on showcasing my robotics and AI projects. Check back soon!</p>
-                   
+                    <h2>Coming Soon</h2>
+                    
                     <div class="contact-cta">
-                        <h3>Interested in My Work?</h3>
-                        <p>In the meantime, feel free to reach out to learn more about my projects!</p>
+                        <h3>Stay Updated</h3>
                         <div class="contact-container" id="contact-link">
                             <a href="#" class="social-link contact-link" aria-label="Contact">Contact Me</a>
                             <div class="contact-tooltip" id="contact-tooltip">
@@ -79,8 +71,8 @@
                     <a href="https://www.linkedin.com/in/cherrybhatt/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     <a href="#" class="social-link" aria-label="GitHub">GitHub</a>
                     <div class="contact-container">
-                        <a href="#" class="social-link contact-link" aria-label="Contact" id="contact-link">Contact</a>
-                        <div class="contact-tooltip" id="contact-tooltip">
+                        <a href="#" class="social-link contact-link" aria-label="Contact" id="footer-contact-link">Contact</a>
+                        <div class="contact-tooltip" id="footer-contact-tooltip">
                             <span class="contact-email">cbhatt@alumni.cmu.edu</span>
                             <span class="contact-copy">Click to copy</span>
                         </div>
@@ -92,9 +84,10 @@
 
     <script src="script.js"></script>
     <script>
-        // Initialize contact tooltip functionality
         document.addEventListener('DOMContentLoaded', () => {
             new ContactTooltip();
+            // Initialize footer contact tooltip
+            new ContactTooltip('footer-contact-link', 'footer-contact-tooltip');
         });
     </script>
 </body>
