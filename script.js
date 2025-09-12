@@ -136,7 +136,7 @@ class ParallaxEffect {
 class TypingEffect {
   constructor() {
     this.nameElement = document.querySelector('.name');
-    this.originalText = this.nameElement?.textContent || 'Cher B';
+    this.originalText = this.nameElement?.textContent || 'Cherry!';
     this.init();
   }
   
