@@ -192,6 +192,99 @@ class ScrollPerformance {
   }
 }
 
+// Contact Tooltip Manager
+class ContactTooltip {
+  constructor() {
+    this.contactLink = document.getElementById('contact-link');
+    this.tooltip = document.getElementById('contact-tooltip');
+    this.email = 'cherry.bhatt@example.com'; // Replace with your actual email
+    
+    this.init();
+  }
+  
+  init() {
+    if (this.contactLink && this.tooltip) {
+      this.contactLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.toggleTooltip();
+      });
+      
+      this.contactLink.addEventListener('mouseenter', () => {
+        this.showTooltip();
+      });
+      
+      this.contactLink.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!this.tooltip.matches(':hover')) {
+            this.hideTooltip();
+          }
+        }, 100);
+      });
+      
+      this.tooltip.addEventListener('mouseenter', () => {
+        this.showTooltip();
+      });
+      
+      this.tooltip.addEventListener('mouseleave', () => {
+        this.hideTooltip();
+      });
+      
+      this.tooltip.addEventListener('click', () => {
+        this.copyEmail();
+      });
+    }
+  }
+  
+  showTooltip() {
+    this.tooltip.classList.add('show');
+  }
+  
+  hideTooltip() {
+    this.tooltip.classList.remove('show');
+  }
+  
+  toggleTooltip() {
+    this.tooltip.classList.toggle('show');
+    if (this.tooltip.classList.contains('show')) {
+      setTimeout(() => {
+        this.copyEmail();
+      }, 100);
+    }
+  }
+  
+  copyEmail() {
+    navigator.clipboard.writeText(this.email).then(() => {
+      const copyText = this.tooltip.querySelector('.contact-copy');
+      const originalText = copyText.textContent;
+      copyText.textContent = 'Copied!';
+      copyText.style.color = 'var(--accent-primary)';
+      
+      setTimeout(() => {
+        copyText.textContent = originalText;
+        copyText.style.color = '';
+      }, 2000);
+    }).catch(() => {
+      // Fallback for browsers that don't support clipboard API
+      const textArea = document.createElement('textarea');
+      textArea.value = this.email;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      
+      const copyText = this.tooltip.querySelector('.contact-copy');
+      const originalText = copyText.textContent;
+      copyText.textContent = 'Copied!';
+      copyText.style.color = 'var(--accent-primary)';
+      
+      setTimeout(() => {
+        copyText.textContent = originalText;
+        copyText.style.color = '';
+      }, 2000);
+    });
+  }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize all features
@@ -201,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new ParallaxEffect();
   new TypingEffect();
   new ScrollPerformance();
+  new ContactTooltip();
   
   // Add loading animation completion
   document.body.classList.add('loaded');
